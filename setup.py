@@ -22,9 +22,8 @@ setup(
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
     classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Programming Language :: Python :: 3"
-        "Operating System :: Raspberry Pi",
+        "Development Status :: 4 - Beta",
+        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
     ],
 )
