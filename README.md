@@ -54,7 +54,7 @@ recover the state** after a restart.
 
 ## API Documentation
 
-The documentation of the exposed API is **defined** in `OpenAPI` in the **file [`api.yml`](api.yml)**.
+The documentation of the exposed API is **defined** in `OpenAPI` in the **file [`docs/api.yml`](docs/api.yml)**.
 
 ## Systemd Service
 
