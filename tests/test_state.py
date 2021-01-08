@@ -1,9 +1,9 @@
 """Tests for the State class."""
 
 import pytest
-from ledpi.const import DISABLED_RGB
-from ledpi.const import WHITE_RGB
-from ledpi.state import State
+from ledpi_controller.const import DISABLED_RGB
+from ledpi_controller.const import WHITE_RGB
+from ledpi_controller.state import State
 
 
 class TestState:

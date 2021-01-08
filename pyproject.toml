@@ -20,7 +20,6 @@ minversion = "6.0"
 addopts = "--strict-markers --cov=src"
 testpaths = [
     "tests",
-    "integrations",
 ]
 norecursedirs = [
     ".git",

@@ -1,8 +1,8 @@
 """Tests for the YamlProcessor classes."""
 
 import os
-from ledpi.state import State
-from ledpi.yaml_processor import YamlProcessor, StateYamlProcessor
+from ledpi_controller.state import State
+from ledpi_controller.yaml_processor import YamlProcessor, StateYamlProcessor
 
 
 class TestYamlProcessor:

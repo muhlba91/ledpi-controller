@@ -2,9 +2,9 @@
 
 import adafruit_ws2801
 import board
-from ledpi.const import DISABLED_RGB
-from ledpi.state import State
-from ledpi.yaml_processor import YamlProcessor
+from ledpi_controller.const import DISABLED_RGB
+from ledpi_controller.state import State
+from ledpi_controller.yaml_processor import YamlProcessor
 
 
 class Controller:

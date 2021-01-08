@@ -9,33 +9,32 @@ This repository contains a **server component** to control a **WS2801 LED strip*
 
 ## Installation
 
-1) Checkout the repository.
-2) Create the configuration file as shown in *Configuration*.
+The package is published in **(Test)PyPi** and can be installed via:
+
+```bash
+pip3 install ledpi-controller
+```
+
+In `examples/main.py` a simple Flask application shows the usage which can be run by:
+
+1) Install the `ledpi-controller` package.
+2) Create a configuration file as shown in *Configuration*.
 3) Install the Python requirements.
 
 ```bash
 $ pip3 install -r requirements.txt
+$ pip3 install -r examples/requirements.txt
 ```
 
 4) Run the application.
 
 ```bash
-$ cd src/ledpi/
-$ python3 main.py -c path/to/config.yml -s path/to/state.yml
+$ python3 examples/main.py -c path/to/config.yml -s path/to/state.yml
 ```
 
-## Configuration
+### Configuration
 
-The application supports two **options**:
-
-| Option | Description |
-|--------|-------------|
-| -c, --config | Path to the configuration file. |
-| -s, --state | Path to the state file. |
-
-### Configuration File
-
-The configuration file defines **global properties** for the application running.
+The configuration defines **global properties** as a `dict` for the application running.
 
 | Option | Description | Default |
 |--------|-------------|---------|
@@ -43,40 +42,12 @@ The configuration file defines **global properties** for the application running
 | leds | The number of LEDs on the strip. | 160 |
 | debug | True if the application should run in debug mode. | false |
 
-An *example* is available in the `examples` directory.
-
 ### State File
 
-The state file **stores** the **current state** of the LED strip and, therefore, is a way of persistent storage to **
-recover the state** after a restart.
+The state file **stores** the **current state** of the LED strip and, therefore, is a way of persistent storage to
+**recover the state** after a restart.
 
 **Important:** please do **not modify** the state file manually!
-
-## API Documentation
-
-The documentation of the exposed API is **defined** in `OpenAPI` in the **file [`docs/api.yml`](docs/api.yml)**.
-
-## Systemd Service
-
-A simple systemd service can be created to automatically start the server like:
-
-```
-[Unit]
-Description=LedPi service
-After=network.target
-
-[Service]
-User=pi
-WorkingDirectory=/home/pi/ledpi
-ExecStartPre=pip3 install -r requirements.txt
-ExecStart=python3 main.py -c config.yml -s state.yml
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-(Also available in the `examples` directory.)
 
 ---
 

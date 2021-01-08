@@ -2,7 +2,7 @@
 
 import webcolors
 
-from ledpi.const import WHITE_RGB
+from ledpi_controller.const import WHITE_RGB
 
 
 class State:

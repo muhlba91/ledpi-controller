@@ -13,7 +13,7 @@ setup(
     version="0.0.1",
     author="Daniel Muehlbachler-Pietrzykowski",
     author_email="daniel.muehlbachler@niftyside.io",
-    description=("Raspberry Pi server component to control a WS2801 LED strip via an API."),
+    description=("Raspberry Pi API component to control a WS2801 LED strip."),
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
     license="MIT",

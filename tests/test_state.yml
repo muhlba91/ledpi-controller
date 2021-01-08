@@ -1,4 +1,4 @@
---- !!python/object:ledpi.state.State
+--- !!python/object:ledpi_controller.state.State
 bright: 1.0
 'on': false
 rgb:
