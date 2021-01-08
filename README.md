@@ -20,7 +20,7 @@ $ pip3 install -r requirements.txt
 4) Run the application.
 
 ```bash
-$ cd src/
+$ cd src/ledpi/
 $ python3 main.py -c path/to/config.yml -s path/to/state.yml
 ```
 
