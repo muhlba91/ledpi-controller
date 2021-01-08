@@ -35,6 +35,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     name: Build and Publish to PyPi and TestPyPi.
+    needs:
+      - test
     strategy:
       max-parallel: 4
       matrix:
@@ -51,6 +53,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install build
 
       - name: Build a binary wheel and a source tarball
         run: |
