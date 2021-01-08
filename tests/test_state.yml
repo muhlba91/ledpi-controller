@@ -1,0 +1,7 @@
+--- !!python/object:ledpi.state.State
+bright: 1.0
+'on': false
+rgb:
+  - 255
+  - 255
+  - 255

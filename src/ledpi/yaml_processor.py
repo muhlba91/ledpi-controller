@@ -2,7 +2,7 @@
 
 import yaml
 
-from state import State
+from ledpi.state import State
 
 
 class YamlProcessor:

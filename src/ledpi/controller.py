@@ -2,9 +2,9 @@
 
 import adafruit_ws2801
 import board
-
-from const import DISABLED_RGB
-from yaml_processor import YamlProcessor
+from ledpi.const import DISABLED_RGB
+from ledpi.state import State
+from ledpi.yaml_processor import YamlProcessor
 
 
 class Controller:
@@ -19,7 +19,7 @@ class Controller:
         self._init_led()
         self._send_commands()
 
-    def tun_on(self):
+    def turn_on(self):
         """Turn the LEDs on."""
         self.state.set_on(True)
         self._send_commands()
@@ -61,16 +61,15 @@ class Controller:
         return self.leds
 
     def _send_commands(self):
-        """Send the commands to the LED strip."""
-        self.led.fill(self.rgb_color() if self.state.is_on() else DISABLED_RGB)
+        self.led.fill(self.rgb_color() if self.is_on() else DISABLED_RGB)
         self.led.show()
         self._write_state()
 
     def _init_led(self):
-        self.led = adafruit_ws2801.WS2801(board.SCLK, board.MOSI, self.leds, brightness=self.state.brightness())
+        self.led = adafruit_ws2801.WS2801(board.SCLK, board.MOSI, self.leds, brightness=self.brightness())
 
     def _write_state(self):
-        self.state_processor.write(self.state)
+        self.state_processor.write(self.state) if self.state_processor is not None else None
 
     def _read_state(self):
-        self.state = self.state_processor.load()
+        self.state = self.state_processor.load() if self.state_processor is not None else State()

@@ -1,0 +1,27 @@
+[tool.coverage.run]
+source = [
+    "src",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplemented()",
+  	"if __name__ == .__main__.:",
+    "main()",
+    "parser\\..",
+    "argparse\\..",
+]
+fail_under = 95
+show_missing = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--strict-markers --cov=src"
+testpaths = [
+    "tests",
+    "integrations",
+]
+norecursedirs = [
+    ".git",
+]
