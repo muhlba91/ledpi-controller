@@ -1,4 +1,0 @@
-webcolors
-adafruit-circuitpython-ws2801
-RPI.GPIO
-pyyaml

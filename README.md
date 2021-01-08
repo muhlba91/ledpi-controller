@@ -12,24 +12,17 @@ This repository contains a **server component** to control a **WS2801 LED strip*
 The package is published in **(Test)PyPi** and can be installed via:
 
 ```bash
-pip3 install ledpi-controller
+pip install ledpi-controller
 ```
 
 In `examples/main.py` a simple Flask application shows the usage which can be run by:
 
 1) Install the `ledpi-controller` package.
 2) Create a configuration file as shown in *Configuration*.
-3) Install the Python requirements.
-
-```bash
-$ pip3 install -r requirements.txt
-$ pip3 install -r examples/requirements.txt
-```
-
 4) Run the application.
 
 ```bash
-$ python3 examples/main.py -c path/to/config.yml -s path/to/state.yml
+$ python examples/main.py -c path/to/config.yml -s path/to/state.yml
 ```
 
 ### Configuration
@@ -51,16 +44,18 @@ The state file **stores** the **current state** of the LED strip and, therefore,
 
 ---
 
-## Running Tests
+## Development
 
-To run the test suite create a virtualenv (I recommend checking out [pyenv](https://github.com/pyenv/pyenv)
-and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) for this) and install the test requirements.
+The project uses [poetry](https://poetry.eustace.io/) and to install all dependencies and the build environment, run:
 
 ```bash
-$ pip install -r requirements.test.txt
+$ pip install poetry
+$ poetry install
 ```
 
-After the test dependencies are installed you can simply invoke `pytest` to run the test suite.
+## Testing
+
+To run the tests, use poetry to install all dependencies and then execute:
 
 ```bash
 $ pytest
