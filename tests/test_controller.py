@@ -17,7 +17,9 @@ from ledpi_controller.state import State
 class TestController:
     @pytest.fixture
     def mock_yaml_processor(self):
-        with patch("ledpi_controller.yaml_processor.StateYamlProcessor") as mock_yaml_processor:
+        with patch(
+            "ledpi_controller.yaml_processor.StateYamlProcessor"
+        ) as mock_yaml_processor:
             mock_yaml_processor.load.return_value = State()
             yield mock_yaml_processor
 

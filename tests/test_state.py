@@ -1,6 +1,7 @@
 """Tests for the State class."""
 
 import pytest
+
 from ledpi_controller.const import DISABLED_RGB
 from ledpi_controller.const import WHITE_RGB
 from ledpi_controller.state import State
@@ -13,7 +14,7 @@ class TestState:
 
     def test_init_defaults(self, state):
         assert state.rgb == WHITE_RGB
-        assert state.on == False
+        assert not state.on
         assert state.bright == 1.0
 
     def test_init_from_state(self, state):

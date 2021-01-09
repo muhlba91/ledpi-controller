@@ -44,5 +44,9 @@ class State:
 
     def __eq__(self, other):
         if isinstance(self, other.__class__):
-            return self.rgb == other.rgb and self.on == other.on and self.bright == other.bright
+            return (
+                self.rgb == other.rgb
+                and self.on == other.on
+                and self.bright == other.bright
+            )
         return False

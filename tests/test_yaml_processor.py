@@ -12,9 +12,7 @@ class TestYamlProcessor:
         assert yaml.get("not_found") is None
 
     def test_write(self):
-        YamlProcessor("tests/test_write.yml").write({
-            "enabled": True
-        })
+        YamlProcessor("tests/test_write.yml").write({"enabled": True})
         assert os.path.exists("tests/test_write.yml")
         os.remove("tests/test_write.yml")
 

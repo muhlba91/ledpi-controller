@@ -53,13 +53,54 @@ $ pip install poetry
 $ poetry install
 ```
 
-## Testing
+### Testing
 
-To run the tests, use poetry to install all dependencies and then execute:
+1) Install all dependencies as shown above.
+2) Run `pytest` by:
 
 ```bash
+$ poetry run pytest
+# or
 $ pytest
 ```
+
+### Linting and Code Style
+
+The project uses [flakehell](https://github.com/life4/flakehell) as a wrapper for flake8,
+and [black](https://github.com/psf/black) for automated code style fixing, also
+using [pre-commit](https://pre-commit.com/).
+
+1) Install all dependencies as shown above.
+2) (Optional) Install pre-commit hooks:
+
+```bash
+$ poetry run pre-commit install
+```
+
+3) Run black:
+
+```bash
+$ poetry run black .
+```
+
+4) Run flakehell:
+
+```bash
+$ poetry run flakehell lint
+```
+
+### Building
+
+This package uses [poetry-dynamic-versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) which infers the
+version number based on the Git tags. Hence, to have a proper versioning for the distribution, use Python's build system
+like:
+
+```bash
+$ pip install build
+$ python -m build
+```
+
+Your distribution will be in the `dist` directory.
 
 ---
 

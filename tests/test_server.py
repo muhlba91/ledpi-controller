@@ -30,30 +30,36 @@ class TestServer:
         }
 
     def test_set_status_turn_on(self, ctrl, server):
-        server.set_status({
-            "state": "on",
-            "rgb_color": "#ffffff",
-            "brightness": 0.5,
-        })
+        server.set_status(
+            {
+                "state": "on",
+                "rgb_color": "#ffffff",
+                "brightness": 0.5,
+            }
+        )
         assert ctrl.set_rgb_color.called
         assert ctrl.set_brightness.called
         assert ctrl.turn_on.called
 
     def test_set_status_turn_off(self, ctrl, server):
-        server.set_status({
-            "state": "off",
-            "rgb_color": "#ffffff",
-            "brightness": 0.5,
-        })
+        server.set_status(
+            {
+                "state": "off",
+                "rgb_color": "#ffffff",
+                "brightness": 0.5,
+            }
+        )
         assert ctrl.set_rgb_color.called
         assert ctrl.set_brightness.called
         assert ctrl.turn_off.called
 
     def test_set_status_partial(self, ctrl, server):
-        server.set_status({
-            "rgb_color": "#ffffff",
-            "brightness": 0.5,
-        })
+        server.set_status(
+            {
+                "rgb_color": "#ffffff",
+                "brightness": 0.5,
+            }
+        )
         assert ctrl.set_rgb_color.called
         assert ctrl.set_brightness.called
         assert not ctrl.turn_off.called

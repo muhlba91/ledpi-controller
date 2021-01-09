@@ -2,6 +2,7 @@
 
 import adafruit_ws2801
 import board
+
 from ledpi_controller.const import DISABLED_RGB
 from ledpi_controller.state import State
 from ledpi_controller.yaml_processor import YamlProcessor
@@ -66,10 +67,16 @@ class Controller:
         self._write_state()
 
     def _init_led(self):
-        self.led = adafruit_ws2801.WS2801(board.SCLK, board.MOSI, self.leds, brightness=self.brightness())
+        self.led = adafruit_ws2801.WS2801(
+            board.SCLK, board.MOSI, self.leds, brightness=self.brightness()
+        )
 
     def _write_state(self):
-        self.state_processor.write(self.state) if self.state_processor is not None else None
+        self.state_processor.write(
+            self.state
+        ) if self.state_processor is not None else None
 
     def _read_state(self):
-        self.state = self.state_processor.load() if self.state_processor is not None else State()
+        self.state = (
+            self.state_processor.load() if self.state_processor is not None else State()
+        )
