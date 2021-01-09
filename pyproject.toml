@@ -42,7 +42,8 @@ pre-commit = "^2.9.3"
 [tool.poetry-dynamic-versioning]
 enable = true
 vcs = "git"
-style = "semver"
+style = "pep440"
+format-jinja = "{% if distance == 0 %}{{ base }}{% else %}{{ base }}.dev{{ distance }}{% endif %}"
 dirty = true
 
 [tool.pytest.ini_options]
