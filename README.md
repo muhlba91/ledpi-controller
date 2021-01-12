@@ -2,6 +2,10 @@
 
 [![](https://img.shields.io/github/license/muhlba91/ledpi-controller?style=for-the-badge)](LICENSE)
 [![](https://img.shields.io/github/workflow/status/muhlba91/ledpi-controller/Python%20package?style=for-the-badge)](https://github.com/muhlba91/ledpi-controller/actions)
+[![](https://img.shields.io/pypi/pyversions/ledpi-controller?style=for-the-badge)](https://pypi.org/project/ledpi-controller/)
+[![](https://img.shields.io/pypi/v/ledpi-controller?style=for-the-badge)](https://pypi.org/project/ledpi-controller/)
+[![](https://img.shields.io/github/release-date/muhlba91/ledpi-controller?style=for-the-badge)](https://github.com/muhlba91/ledpi-controller/releases)
+[![](https://img.shields.io/pypi/dm/ledpi-controller?style=for-the-badge)](https://pypi.org/project/ledpi-controller/)
 
 This repository contains a **server component** to control a **WS2801 LED strip** connected to a Raspberry Pi.
 
