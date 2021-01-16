@@ -73,6 +73,7 @@ class TestController:
         ctrl.set_brightness(0.5)
         assert ctrl.brightness() == 0.5
         assert mock_yaml_processor.write.called
+        assert mock_leds.brightness == 0.5
         assert mock_leds.fill.called
         assert mock_leds.show.called
 

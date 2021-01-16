@@ -54,7 +54,7 @@ class Controller:
     def set_brightness(self, brightness: float):
         """Set the brightness of the LEDs."""
         self.state.set_brightness(brightness)
-        self._init_led()
+        self.led.brightness = brightness
         self._send_commands()
 
     def get_leds(self):

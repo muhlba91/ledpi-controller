@@ -4,14 +4,39 @@ import argparse
 from flask import Flask, jsonify, request
 
 from ledpi_controller.controller import Controller
-from ledpi_controller.server import Server
-from ledpi_controller.yaml_processor import StateYamlProcessor
-from ledpi_controller.yaml_processor import YamlProcessor
+from ledpi_controller.yaml_processor import StateYamlProcessor, YamlProcessor
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-c", "--config", required=True)
 parser.add_argument("-s", "--state", required=True)
 args = parser.parse_args()
+
+
+class Server:
+    def __init__(self, controller: Controller):
+        self.controller = controller
+
+    def get_state(self):
+        return {
+            "state": "on" if self.controller.is_on() else "off",
+            "rgb_color": self.controller.rgb_hex_color(),
+            "leds": self.controller.get_leds(),
+            "brightness": self.controller.brightness(),
+        }
+
+    def set_state(self, state: dict):
+        if "rgb_color" in state:
+            self.controller.set_rgb_color(state["rgb_color"])
+
+        if "brightness" in state:
+            self.controller.set_brightness(state["brightness"])
+
+        if "state" in state:
+            state = state["state"]
+            if state == "on":
+                self.controller.turn_on()
+            elif state == "off":
+                self.controller.turn_off()
 
 
 def create_app(config, state_file):
@@ -26,9 +51,9 @@ def create_app(config, state_file):
     def state_method():
         if request.method == "POST":
             json = request.get_json(force=True)
-            server.set_status(json)
+            server.set_state(json)
 
-        return jsonify({"success": True, **server.get_status()})
+        return jsonify({"success": True, **server.get_state()})
 
     return app
 
