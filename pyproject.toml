@@ -57,6 +57,7 @@ norecursedirs = [
 ]
 
 [tool.coverage.run]
+relative_files = true
 source = [
     "ledpi_controller",
 ]
