@@ -2,6 +2,7 @@
 
 [![](https://img.shields.io/github/license/muhlba91/ledpi-controller?style=for-the-badge)](LICENSE)
 [![](https://img.shields.io/github/workflow/status/muhlba91/ledpi-controller/Python%20package?style=for-the-badge)](https://github.com/muhlba91/ledpi-controller/actions)
+[![](https://img.shields.io/coveralls/github/muhlba91/ledpi-controller?style=for-the-badge)](https://github.com/muhlba91/ledpi-controller/)
 [![](https://img.shields.io/pypi/pyversions/ledpi-controller?style=for-the-badge)](https://pypi.org/project/ledpi-controller/)
 [![](https://img.shields.io/pypi/v/ledpi-controller?style=for-the-badge)](https://pypi.org/project/ledpi-controller/)
 [![](https://img.shields.io/github/release-date/muhlba91/ledpi-controller?style=for-the-badge)](https://github.com/muhlba91/ledpi-controller/releases)
@@ -125,6 +126,7 @@ $ npx standard-version
 ```
 
 Finally, push with tags:
+
 ```bash
 $ git push --follow-tags
 ```
